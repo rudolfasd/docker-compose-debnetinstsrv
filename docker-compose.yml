@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:1.17.5
+    ports:
+      - 80:80
+    volumes:
+      - ./src/html:/usr/share/nginx/html
+
+  tftpd:
+    image: danrue/tftpd-hpa
+    ports:
+      - 69:69/udp
+    volumes:
+      - ./src/tftp:/srv/tftp
+
+  dhcpd:
+    image: networkboot/dhcpd
+    network_mode: "host"
+    volumes:
+      - ./src/etc/dhcp:/data

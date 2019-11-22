@@ -1,0 +1,11 @@
+.git
+
+src/tftp/*
+!src/tftp/debian-installer
+src/tftp/debian-installer/*
+!src/tftp/debian-installer/amd64
+src/tftp/debian-installer/amd64/*
+!src/tftp/debian-installer/amd64/boot-screens
+src/tftp/debian-installer/amd64/boot-screens/*
+!src/tftp/debian-installer/amd64/boot-screens/syslinux.cfg.modified
+!src/tftp/debian-installer/amd64/boot-screens/txt.cfg.modified
